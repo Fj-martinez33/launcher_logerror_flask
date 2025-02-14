@@ -1,0 +1,69 @@
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Estilo para alinear el formulario a la izquierda */
+form {
+    display: flex;
+    flex-direction: column; /* Para que los elementos estén apilados verticalmente */
+    align-items: flex-start; /* Alineación a la izquierda */
+    margin: 20px; /* Espacio alrededor del formulario */
+}
+
+/* Estilo para las etiquetas y los inputs */
+form label {
+    margin-bottom: 5px; /* Espacio entre la etiqueta y el campo */
+    color: #333; /* Color de texto oscuro para buena visibilidad */
+}
+
+form input {
+    margin-bottom: 10px; /* Espacio entre los campos */
+    padding: 10px; /* Espaciado interno para que los inputs no estén pegados a los bordes */
+    width: 100%; /* Hace que los campos de entrada ocupen todo el ancho disponible */
+    max-width: 300px; /* Limita el ancho máximo de los inputs */
+    border-radius: 15px; /* Bordes más redondeados */
+    border: 1px solid #4CAF50; /* Borde verde claro para contraste */
+    background-color: #fff; /* Fondo blanco para los campos */
+    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño del input */
+    color: #333; /* Color del texto dentro de los inputs */
+}
+
+/* Botón centrado y con bordes redondeados */
+form button {
+    padding: 12px 30px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #4CAF50; /* Verde para el botón */
+    color: white;
+    border: none;
+    border-radius: 20px; /* Bordes del botón más redondeados */
+    width: auto;
+    align-self: center; /* Centra el botón */
+}
+
+form button:hover {
+    background-color: #45a049; /* Un verde más oscuro al pasar el ratón */
+}
+
+/* Contenedor para el mensaje del log_error */
+.log-error-container {
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    margin-top: 20px; /* Espaciado desde la parte superior */
+}
+
+.log-error-message {
+    display: inline-block; /* Asegura que el mensaje se centre */
+    padding: 10px;
+    background-color: #f8d7da; /* Color de fondo */
+    color: #721c24; /* Color de texto */
+    border: 1px solid #f5c6cb; /* Borde de color rojo */
+    border-radius: 5px; /* Bordes redondeados */
+    font-weight: bold; /* Poner el texto en negrita */
+}
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Log-Error Predictor</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    </head>
+    <body>
+        <h1>Log-Error Predictor</h1>
+
+        <form method="POST">
+            <label for="transaction_date">Fecha de transacción:</label>
+            <input type="date" id="transaction_date" name="transaction_date" value="2016-01-15"><br>
+
+            <label for="construction_date">Fecha de construcción:</label>
+            <input type="date" id="construction_date" name="construction_date" value="2016-01-15"><br>
+
+            <label for="calculated_sqmf">Metros Cuadrados calculados:</label>
+            <input type="number" id="calculated_sqmf" name="calculated_sqmf" min="0" max="1000"><br>
+
+            <label for="finished_living_area">Metros Cuadrados habitables:</label>
+            <input type="number" id="finished_living_area" name="finished_living_area" min="0" max="500"><br>
+
+            <label for="total_sqm">Área total:</label>
+            <input type="number" id="total_sqm" name="total_sqm" min="0" max="500"><br>
+
+            <label for="lotsizesqft">Superficie total de la parcela:</label>
+            <input type="number" id="lotsizesqft" name="lotsizesqft" min="0" max="1000"><br>
+
+            <label for="structureTaxValue">Tasación del inmueble:</label>
+            <input type="number" id="structureTaxValue" name="structureTaxValue" min="0" max="1000000"><br>
+
+            <label for="taxamount">Impuestos sobre la propiedad:</label>
+            <input type="number" id="taxamount" name="taxamount" min="0" max="10000"><br>
+
+            <label for="baths">Baños:</label>
+            <input type="number" id="baths" name="baths" min="0" max="5"><br>
+
+            <label for="beds">Dormitorios:</label>
+            <input type="number" id="beds" name="beds" min="0" max="5"><br>
+
+            <label for="zipCode">Código Postal (ZIP Code):</label>
+            <input type="number" id="zipCode" name="zipCode" maxlength="5"><br>
+
+            <label for="censusTractBlock">FIPS+ Código Condal + Tracto Censal + Bloque:</label>
+            <input type="number" id="censusTractBlock" name="censusTractBlock" maxlength="14"><br>
+
+            <button type="submit">Predecir</button>
+        </form>
+
+        {#Las llaves en Jinjo2 son un puto lio.#}
+        {% if log_error is not none %}
+        <div class="log-error-container">
+            <h3>La predicción del Error Relativo es de: <span style="color:red; font-weight: bold;">{{ '{:.2f}'.format(log_error) }}%</span></h3>
+        </div>
+        {% endif %}
+    </body>
+</html>
