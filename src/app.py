@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import os
 import pandas as pd
 import numpy as np
 from datetime import date
@@ -111,4 +112,6 @@ def Home():
 
 
 if __name__ == '__main__':
-    APP.run(debug=True)
+
+    port = int(os.environ.get("PORT", 5000))  # Usar el puerto especificado por Render o 5000 por defecto
+    APP.run(debug=True, host='0.0.0.0', port=port)  # Cambia host a '0.0.0.0'
