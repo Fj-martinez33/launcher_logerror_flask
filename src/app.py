@@ -6,7 +6,7 @@ from pickle import load
 
 #Cargamos el modelo
 
-MODEL = load(open("models/ensemble.sav", "rb"))
+MODEL = load(open("../models/ensemble.sav", "rb"))
 
 APP = Flask(__name__)
 
